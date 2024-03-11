@@ -9,3 +9,5 @@ r=requests.get(url)
 
 data = json.loads(r.text)
 print(data["current"]["temp_f"])
+speak = wincom.Dispatch("SAPI.SpVoice")
+speak.Speak(f"The temperature of {city} is {data['current']['temp_f']} fahrenheit")
